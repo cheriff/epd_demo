@@ -26,6 +26,10 @@ Then, each time you want to update the display:
   if you send too little or to much.
 * `epdEnd()` This finialises the display, beginning the update and waiting for
   it to happen. Note: this may take many seconds (say, upto 30)
+  
+You can also call:
+ * `clearEpd()` which, although badly named, clears the display. (it's just a fullscreen draw of while)
+ * `epdSleep()` puts the display to sleep. It may require another `initEpd()` to bring back to life but I havent tested that, usually just deepsleep and effectively reboot for the next update. I get the impression from waveshare docs that it's better for the display if it is left asleep rather than init'd for long periods of time.
 
 ## Data format
 The buffer you push is 4-bits per pixel, packed tightly into neighbouring
