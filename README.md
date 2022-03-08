@@ -31,13 +31,20 @@ Then, each time you want to update the display:
 The buffer you push is 4-bits per pixel, packed tightly into neighbouring
 nybbles of a byte. So for the a 600 * 448 display we send half that many bytes.
 
-0x0: Black
-0x1: White
-0x2: Green
-0x3: Blue
-0x4: Red
-0x5: Yellow
-0x6: Orange
-0x7: not defined, and priobably best avoided!
+There are 7 colours allowed. These are presented below as well as their approximate RGB values (sampled from a photo of the display, taken under non-controlled lighting conditions).
+
+| Index | Colour | RGB               | HTML    |
+| ----- | -------| ----------------- | ------- |
+| 0     | Black  | ( 12, 12, 14 )    | #0c0c0e |
+| 1     | White  | ( 210, 210, 208 ) | #d2d2d0 |
+| 2     | Green  | ( 30, 96, 31 )    | #1e601f |
+| 3     | Blue   | ( 29, 30, 84 )    | #1d1e54 |
+| 4     | Red    | ( 140, 27, 29 )   | #8c1b1d |
+| 5     | Yellow | ( 211, 201, 61 )  | #d3c93d |
+| 6     | Orange | ( 193, 113, 42 )  | #c1712a |
 
 Internally, `epdClear()` just sends 0x11 bytes to make it all white.
+
+## Example:
+![epaper.jpg](doc/epaper.jpg)
+nice
